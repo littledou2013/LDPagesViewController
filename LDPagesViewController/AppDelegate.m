@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "QTHomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    QTHomeViewController *viewController = [[QTHomeViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self.window setRootViewController:navigationController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
