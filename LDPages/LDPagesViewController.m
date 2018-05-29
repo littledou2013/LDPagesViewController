@@ -17,7 +17,6 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
         unsigned willEnterViewControllerAtIndex : 1;
         unsigned didEnterViewControllerAtIndex : 1;
         unsigned willRemoveViewControllerAtIndex : 1;
-        unsigned didRemoveViewControllerAtIndex : 1;
     } _delegateHas;
     
     NSInteger _numberOfViewController;
@@ -37,12 +36,6 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)setup {
-    _memCache = [NSCache new];
-    _displayVC = [NSMutableDictionary dictionary];
-    _numberOfViewController = kLDNumberOfViewControllerUndefined;
     _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     _scrollView.scrollsToTop = NO;
     _scrollView.pagingEnabled = YES;
@@ -56,16 +49,18 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
     }
     [_scrollView setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:_scrollView];
-    
+    [self resetScrollView];
+    [self layoutPagesViewController];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)setup {
+    _memCache = [NSCache new];
+    _displayVC = [NSMutableDictionary dictionary];
+    _numberOfViewController = kLDNumberOfViewControllerUndefined;
 }
 
 - (void)setDataSource:(id<LDPagesViewControllerDataSource>)dataSource {
     _dataSource = dataSource;
-    
 }
 
 - (void)setDelegate:(id<LDPagesViewControllerDelegate>)delegate {
@@ -73,7 +68,6 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
     _delegateHas.willEnterViewControllerAtIndex = [_delegate respondsToSelector:@selector(pagesViewController:willEnterViewControllerAtIndex:)];
     _delegateHas.didEnterViewControllerAtIndex = [_delegate respondsToSelector:@selector(pagesViewController:didEnterViewControllerAtIndex:)];
     _delegateHas.willRemoveViewControllerAtIndex = [_delegate respondsToSelector:@selector(pagesViewController:willRemoveViewControllerAtIndex:)];
-//    _delegateHas.didRemoveViewControllerAtIndex = [_delegate respondsToSelector:@selector(pagesViewController:didRemoveViewControllerAtIndex:)];
 }
 
 
@@ -89,20 +83,14 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
     [_displayVC removeAllObjects];
     
     [self resetScrollView];
-    
-    [_scrollView setContentOffset:CGPointMake(_scrollView.bounds.size.width * _currentIndex, 0)];
-}
-
-- (void)viewWillLayoutSubviews {
-    
-    [super viewWillLayoutSubviews];
+    _currentIndex = _currentIndex < self.numberOfChildrenViewController ? _currentIndex : (self.numberOfChildrenViewController > 0 ? self.numberOfChildrenViewController - 1 : 0);
     [self resetScrollView];
-    [self layoutPagesViewController];
 }
 
 - (void)resetScrollView {
     [_scrollView setFrame:self.view.bounds];
     _scrollView.contentSize = CGSizeMake(_scrollView.bounds.size.width * self.numberOfViewControllerInPagseViewController, _scrollView.bounds.size.height);
+    [_scrollView setContentOffset:CGPointMake(_currentIndex * _scrollView.bounds.size.width, 0)];
 }
 
 - (void)layoutPagesViewController {
@@ -152,7 +140,9 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
 }
 
 - (void)setCurrentIndex:(NSInteger)currentIndex {
+    _scrollingBecuaseOfDraggingScrollView = NO;
     [_scrollView setContentOffset:CGPointMake(_scrollView.bounds.size.width * currentIndex, 0)];
+    _scrollingBecuaseOfDraggingScrollView = YES;
 }
 
 
@@ -198,14 +188,9 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
 
 //停止滑动后调用
 - (void)scrollViewDidEndScrolling:(UIScrollView *)scrollView {
-    NSInteger newIndex = scrollView.contentOffset.x / scrollView.bounds.size.width;
-    NSInteger oldIndex = _currentIndex;
-    if (_delegateHas.didRemoveViewControllerAtIndex) {
-        [_delegate pagesViewController:self didEnterViewControllerAtIndex:oldIndex];
-    }
-    _currentIndex = newIndex;
+    _currentIndex = scrollView.contentOffset.x / scrollView.bounds.size.width;
     if (_delegateHas.didEnterViewControllerAtIndex) {
-        [_delegate pagesViewController:self didEnterViewControllerAtIndex:newIndex];
+        [_delegate pagesViewController:self didEnterViewControllerAtIndex:_currentIndex];
     }
 }
 

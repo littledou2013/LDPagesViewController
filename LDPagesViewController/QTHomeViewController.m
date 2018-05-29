@@ -8,7 +8,7 @@
 
 #import "QTHomeViewController.h"
 #import "LDPagesViewController.h"
-#import "LDChildViewController.h"
+#import "TableViewController.h"
 
 @interface QTHomeViewController ()<LDPagesViewControllerDataSource, LDPagesViewControllerDelegate>
 {
@@ -22,8 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
-    
     _pagesViewController = [[LDPagesViewController alloc] init];
     
     [_pagesViewController setDataSource:self];
@@ -33,7 +31,7 @@
     [_pagesViewController.view setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:_pagesViewController.view];
     [self addChildViewController:_pagesViewController];
-    _button = [[UIButton alloc] initWithFrame:CGRectMake(50, 10, 50, 50)];
+    _button = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 100, 50)];
     [_button setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:_button];
     [_button addTarget:self action:@selector(changeCurrentIndex) forControlEvents:UIControlEventTouchUpInside];
@@ -42,7 +40,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
+//    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -58,10 +56,11 @@
 
 #pragma mark
 - (NSInteger)numberOfViewControllerInPagseViewController:(LDPagesViewController *)pagesViewController {
-    return 12;
+    return 100;
 }
 - (UIViewController *)pagesViewController:(LDPagesViewController *)pagesViewController viewControllerForIndex:(NSInteger)index {
-    return [[LDChildViewController alloc] init];
+    UIViewController *viewController = [[TableViewController alloc] init];
+    return viewController;
 }
 
 - (void)pagesViewController:(LDPagesViewController *)pagesViewController willEnterViewControllerAtIndex:(NSInteger)index {
@@ -72,7 +71,10 @@
 }
 
 - (void)pagesViewController:(LDPagesViewController *)pagesViewController didChangeRationX:(CGFloat)rationX {
-    [_button setTitle:[NSString stringWithFormat:@"%@", @(rationX)] forState:UIControlStateNormal];
+    if (pagesViewController.scrollingBecuaseOfDraggingScrollView) {
+        [_button setTitle:[NSString stringWithFormat:@"%@", @(rationX)] forState:UIControlStateNormal];
+    }
+    
 }
 
 @end

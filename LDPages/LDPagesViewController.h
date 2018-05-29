@@ -11,31 +11,27 @@
 
 @class LDPagesViewController;
 @protocol LDPagesViewControllerDataSource<NSObject>
-
 @required
 
 - (UIViewController *)pagesViewController:(LDPagesViewController *)pagesViewController viewControllerForIndex:(NSInteger)index;
-@optional
-- (NSInteger)numberOfViewControllerInPagseViewController:(LDPagesViewController *)pagesViewController; // Default is 1 if not implemented
+- (NSInteger)numberOfViewControllerInPagseViewController:(LDPagesViewController *)pagesViewController;
 @end
+
 
 @protocol LDPagesViewControllerDelegate<NSObject>
 @required
-
 //侧滑调用
 - (void)pagesViewController:(LDPagesViewController *)pagesViewController didChangeRationX:(CGFloat)rationX;
 @optional
 
+//某页面开始显示
 - (void)pagesViewController:(LDPagesViewController *)pagesViewController willEnterViewControllerAtIndex:(NSInteger)index;
 
-// 完全进入控制器 (即停止滑动后调用)
+// 停止滑动完全进入页面后调用
 - (void)pagesViewController:(LDPagesViewController *)pagesViewController didEnterViewControllerAtIndex:(NSInteger)index;
 
-
+//某页面消失
 - (void)pagesViewController:(LDPagesViewController *)pagesViewController willRemoveViewControllerAtIndex:(NSInteger)index;
-
-// 即停止滑动后调用
-- (void)pagesViewController:(LDPagesViewController *)pagesViewController DidRemoveViewControllerAtIndex:(NSInteger)index;
 @end
 
 
@@ -43,7 +39,12 @@
 
 @property (nonatomic, weak) id<LDPagesViewControllerDataSource> dataSource;
 @property (nonatomic, weak) id<LDPagesViewControllerDelegate> delegate;
+
+// 当前显示页面， 外部可跟新当前显示子页面
 @property (nonatomic, assign) NSInteger currentIndex;
+
+// 滑动时因为用户手动滑动，还是外部设置
+@property (nonatomic, readonly) BOOL scrollingBecuaseOfDraggingScrollView;
 
 @property (nonatomic, readonly) NSInteger numberOfChildrenViewController;
 

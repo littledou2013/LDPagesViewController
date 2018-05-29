@@ -14,19 +14,12 @@
 		A8646EBF20BB9CF000B7FCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8646EBD20BB9CF000B7FCE9 /* LaunchScreen.storyboard */; };
 		A8646EC220BB9CF000B7FCE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EC120BB9CF000B7FCE9 /* main.m */; };
 		A8646ECB20BB9D6700B7FCE9 /* LDPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646ECA20BB9D6700B7FCE9 /* LDPagesViewController.m */; };
-		A8646ECE20BBAD6100B7FCE9 /* LDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646ECD20BBAD6100B7FCE9 /* LDChildViewController.m */; };
 		A8646ED420BBC1B800B7FCE9 /* UIColor+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646ED320BBC1B800B7FCE9 /* UIColor+Tool.m */; };
 		A8646EDA20BBEF3100B7FCE9 /* QTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646ED920BBEF3100B7FCE9 /* QTHomeViewController.m */; };
-		A8646EEC20BBEFBF00B7FCE9 /* QTToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EDE20BBEFBE00B7FCE9 /* QTToolView.m */; };
-		A8646EED20BBEFBF00B7FCE9 /* QTTopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EDF20BBEFBE00B7FCE9 /* QTTopMenuView.m */; };
-		A8646EEE20BBEFBF00B7FCE9 /* QTHomeProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EE120BBEFBE00B7FCE9 /* QTHomeProgressView.m */; };
-		A8646EEF20BBEFBF00B7FCE9 /* QTHomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EE220BBEFBE00B7FCE9 /* QTHomeMenuItem.m */; };
-		A8646EF020BBEFBF00B7FCE9 /* QTHomeMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EE420BBEFBE00B7FCE9 /* QTHomeMenuView.m */; };
-		A8646EF120BBEFBF00B7FCE9 /* QTHomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EE820BBEFBE00B7FCE9 /* QTHomeTopView.m */; };
-		A8646EF220BBEFBF00B7FCE9 /* QTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EEA20BBEFBF00B7FCE9 /* QTSearchBar.m */; };
-		A8646EF320BBEFBF00B7FCE9 /* QTMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EEB20BBEFBF00B7FCE9 /* QTMaskView.m */; };
 		A8646EF620BBF0B000B7FCE9 /* UIDevice+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EF520BBF0B000B7FCE9 /* UIDevice+Tool.m */; };
-		A87692FD20D0BFF500B9F78E /* UserInterfaceState.xcuserstate in Resources */ = {isa = PBXBuildFile; fileRef = A87692FC20D0BFF500B9F78E /* UserInterfaceState.xcuserstate */; };
+		A8646EFA20BD096E00B7FCE9 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EF920BD096E00B7FCE9 /* TableViewController.m */; };
+		A8646EFE20BD107D00B7FCE9 /* LDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EFD20BD107D00B7FCE9 /* LDMenuView.m */; };
+		A8646F0120BD108D00B7FCE9 /* LDMenuItemLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646F0020BD108D00B7FCE9 /* LDMenuItemLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,32 +35,19 @@
 		A8646EC120BB9CF000B7FCE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8646EC920BB9D6700B7FCE9 /* LDPagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDPagesViewController.h; sourceTree = "<group>"; };
 		A8646ECA20BB9D6700B7FCE9 /* LDPagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDPagesViewController.m; sourceTree = "<group>"; };
-		A8646ECC20BBAD6100B7FCE9 /* LDChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDChildViewController.h; sourceTree = "<group>"; };
-		A8646ECD20BBAD6100B7FCE9 /* LDChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDChildViewController.m; sourceTree = "<group>"; };
 		A8646ED220BBC1B800B7FCE9 /* UIColor+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tool.h"; sourceTree = "<group>"; };
 		A8646ED320BBC1B800B7FCE9 /* UIColor+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tool.m"; sourceTree = "<group>"; };
 		A8646ED820BBEF3100B7FCE9 /* QTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTHomeViewController.h; sourceTree = "<group>"; };
 		A8646ED920BBEF3100B7FCE9 /* QTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTHomeViewController.m; sourceTree = "<group>"; };
-		A8646EDC20BBEFBD00B7FCE9 /* QTHomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTHomeMenuItem.h; sourceTree = "<group>"; };
-		A8646EDD20BBEFBE00B7FCE9 /* QTToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTToolView.h; sourceTree = "<group>"; };
-		A8646EDE20BBEFBE00B7FCE9 /* QTToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTToolView.m; sourceTree = "<group>"; };
-		A8646EDF20BBEFBE00B7FCE9 /* QTTopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTTopMenuView.m; sourceTree = "<group>"; };
-		A8646EE020BBEFBE00B7FCE9 /* QTHomeMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTHomeMenuView.h; sourceTree = "<group>"; };
-		A8646EE120BBEFBE00B7FCE9 /* QTHomeProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTHomeProgressView.m; sourceTree = "<group>"; };
-		A8646EE220BBEFBE00B7FCE9 /* QTHomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTHomeMenuItem.m; sourceTree = "<group>"; };
-		A8646EE320BBEFBE00B7FCE9 /* QTTopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTTopMenuView.h; sourceTree = "<group>"; };
-		A8646EE420BBEFBE00B7FCE9 /* QTHomeMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTHomeMenuView.m; sourceTree = "<group>"; };
-		A8646EE520BBEFBE00B7FCE9 /* QTHomeProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTHomeProgressView.h; sourceTree = "<group>"; };
-		A8646EE620BBEFBE00B7FCE9 /* QTSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTSearchBar.h; sourceTree = "<group>"; };
-		A8646EE720BBEFBE00B7FCE9 /* QTMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTMaskView.h; sourceTree = "<group>"; };
-		A8646EE820BBEFBE00B7FCE9 /* QTHomeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTHomeTopView.m; sourceTree = "<group>"; };
-		A8646EE920BBEFBE00B7FCE9 /* QTHomeTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTHomeTopView.h; sourceTree = "<group>"; };
-		A8646EEA20BBEFBF00B7FCE9 /* QTSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTSearchBar.m; sourceTree = "<group>"; };
-		A8646EEB20BBEFBF00B7FCE9 /* QTMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTMaskView.m; sourceTree = "<group>"; };
 		A8646EF420BBF0B000B7FCE9 /* UIDevice+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Tool.h"; sourceTree = "<group>"; };
 		A8646EF520BBF0B000B7FCE9 /* UIDevice+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Tool.m"; sourceTree = "<group>"; };
 		A8646EF720BBF0F900B7FCE9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		A87692FC20D0BFF500B9F78E /* UserInterfaceState.xcuserstate */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = UserInterfaceState.xcuserstate; path = LDPagesViewController.xcodeproj/project.xcworkspace/xcuserdata/cxs.xcuserdatad/UserInterfaceState.xcuserstate; sourceTree = "<group>"; };
+		A8646EF820BD096E00B7FCE9 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		A8646EF920BD096E00B7FCE9 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		A8646EFC20BD107D00B7FCE9 /* LDMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDMenuView.h; sourceTree = "<group>"; };
+		A8646EFD20BD107D00B7FCE9 /* LDMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDMenuView.m; sourceTree = "<group>"; };
+		A8646EFF20BD108D00B7FCE9 /* LDMenuItemLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDMenuItemLabel.h; sourceTree = "<group>"; };
+		A8646F0020BD108D00B7FCE9 /* LDMenuItemLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDMenuItemLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +64,7 @@
 		A8646EA620BB9CEF00B7FCE9 = {
 			isa = PBXGroup;
 			children = (
-				A87692FC20D0BFF500B9F78E /* UserInterfaceState.xcuserstate */,
-				A8646EDB20BBEF9B00B7FCE9 /* QTHomeTopView */,
+				A8646EFB20BD106A00B7FCE9 /* LDMenu */,
 				A8646ED020BBC1A200B7FCE9 /* Tool */,
 				A8646EC820BB9D5100B7FCE9 /* LDPages */,
 				A8646EB120BB9CEF00B7FCE9 /* LDPagesViewController */,
@@ -125,8 +104,8 @@
 			children = (
 				A8646EC920BB9D6700B7FCE9 /* LDPagesViewController.h */,
 				A8646ECA20BB9D6700B7FCE9 /* LDPagesViewController.m */,
-				A8646ECC20BBAD6100B7FCE9 /* LDChildViewController.h */,
-				A8646ECD20BBAD6100B7FCE9 /* LDChildViewController.m */,
+				A8646EF820BD096E00B7FCE9 /* TableViewController.h */,
+				A8646EF920BD096E00B7FCE9 /* TableViewController.m */,
 			);
 			path = LDPages;
 			sourceTree = "<group>";
@@ -150,27 +129,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		A8646EDB20BBEF9B00B7FCE9 /* QTHomeTopView */ = {
+		A8646EFB20BD106A00B7FCE9 /* LDMenu */ = {
 			isa = PBXGroup;
 			children = (
-				A8646EDC20BBEFBD00B7FCE9 /* QTHomeMenuItem.h */,
-				A8646EE220BBEFBE00B7FCE9 /* QTHomeMenuItem.m */,
-				A8646EE020BBEFBE00B7FCE9 /* QTHomeMenuView.h */,
-				A8646EE420BBEFBE00B7FCE9 /* QTHomeMenuView.m */,
-				A8646EE520BBEFBE00B7FCE9 /* QTHomeProgressView.h */,
-				A8646EE120BBEFBE00B7FCE9 /* QTHomeProgressView.m */,
-				A8646EE920BBEFBE00B7FCE9 /* QTHomeTopView.h */,
-				A8646EE820BBEFBE00B7FCE9 /* QTHomeTopView.m */,
-				A8646EE720BBEFBE00B7FCE9 /* QTMaskView.h */,
-				A8646EEB20BBEFBF00B7FCE9 /* QTMaskView.m */,
-				A8646EE620BBEFBE00B7FCE9 /* QTSearchBar.h */,
-				A8646EEA20BBEFBF00B7FCE9 /* QTSearchBar.m */,
-				A8646EDD20BBEFBE00B7FCE9 /* QTToolView.h */,
-				A8646EDE20BBEFBE00B7FCE9 /* QTToolView.m */,
-				A8646EE320BBEFBE00B7FCE9 /* QTTopMenuView.h */,
-				A8646EDF20BBEFBE00B7FCE9 /* QTTopMenuView.m */,
+				A8646EFC20BD107D00B7FCE9 /* LDMenuView.h */,
+				A8646EFD20BD107D00B7FCE9 /* LDMenuView.m */,
+				A8646EFF20BD108D00B7FCE9 /* LDMenuItemLabel.h */,
+				A8646F0020BD108D00B7FCE9 /* LDMenuItemLabel.m */,
 			);
-			path = QTHomeTopView;
+			path = LDMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,20 +213,14 @@
 			files = (
 				A8646EB720BB9CEF00B7FCE9 /* ViewController.m in Sources */,
 				A8646EF620BBF0B000B7FCE9 /* UIDevice+Tool.m in Sources */,
+				A8646F0120BD108D00B7FCE9 /* LDMenuItemLabel.m in Sources */,
+				A8646EFA20BD096E00B7FCE9 /* TableViewController.m in Sources */,
 				A8646ECB20BB9D6700B7FCE9 /* LDPagesViewController.m in Sources */,
-				A8646EF320BBEFBF00B7FCE9 /* QTMaskView.m in Sources */,
-				A8646EED20BBEFBF00B7FCE9 /* QTTopMenuView.m in Sources */,
+				A8646EFE20BD107D00B7FCE9 /* LDMenuView.m in Sources */,
 				A8646EDA20BBEF3100B7FCE9 /* QTHomeViewController.m in Sources */,
 				A8646EC220BB9CF000B7FCE9 /* main.m in Sources */,
-				A8646EF120BBEFBF00B7FCE9 /* QTHomeTopView.m in Sources */,
-				A8646EF020BBEFBF00B7FCE9 /* QTHomeMenuView.m in Sources */,
-				A8646EEE20BBEFBF00B7FCE9 /* QTHomeProgressView.m in Sources */,
-				A8646ECE20BBAD6100B7FCE9 /* LDChildViewController.m in Sources */,
-				A8646EEC20BBEFBF00B7FCE9 /* QTToolView.m in Sources */,
-				A8646EF220BBEFBF00B7FCE9 /* QTSearchBar.m in Sources */,
 				A8646EB420BB9CEF00B7FCE9 /* AppDelegate.m in Sources */,
 				A8646ED420BBC1B800B7FCE9 /* UIColor+Tool.m in Sources */,
-				A8646EEF20BBEFBF00B7FCE9 /* QTHomeMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +364,7 @@
 				DEVELOPMENT_TEAM = PGS44TR36V;
 				GCC_PREFIX_HEADER = LDPagesViewController/PrefixHeader.pch;
 				INFOPLIST_FILE = LDPagesViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,6 +383,7 @@
 				DEVELOPMENT_TEAM = PGS44TR36V;
 				GCC_PREFIX_HEADER = LDPagesViewController/PrefixHeader.pch;
 				INFOPLIST_FILE = LDPagesViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
