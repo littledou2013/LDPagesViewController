@@ -10,11 +10,14 @@
 #import "TableViewController.h"
 #import "LDPagesViewController.h"
 #import "LDMenuView.h"
+#import "LDMenuBackgroundView.h"
 
 @interface LDHomeViewController ()<LDPagesViewControllerDataSource, LDPagesViewControllerDelegate, LDMenuViewDelegate, LDMenuViewDataSource>
 {
     LDPagesViewController *_pagesViewController;
     LDMenuView *_menuView;
+    LDMenuBackgroundView *_backgroundView;
+    
 }
 @end
 
@@ -38,6 +41,9 @@
     [_menuView setDataSource:self];
     [_menuView setBackgroundColor:[UIColor purpleColor]];
     [self.view addSubview:_menuView];
+    
+    _backgroundView = [[LDMenuBackgroundView alloc] initWithFrame:CGRectMake(50, 150, 200, 200)];
+    [self.view addSubview:_backgroundView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

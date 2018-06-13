@@ -20,6 +20,7 @@
 		A8646EFE20BD107D00B7FCE9 /* LDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EFD20BD107D00B7FCE9 /* LDMenuView.m */; };
 		A8646F0120BD108D00B7FCE9 /* LDMenuItemLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646F0020BD108D00B7FCE9 /* LDMenuItemLabel.m */; };
 		A876930020D0C61F00B9F78E /* LDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87692FF20D0C61F00B9F78E /* LDHomeViewController.m */; };
+		A876930320D0D37400B9F78E /* LDMenuBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A876930220D0D37400B9F78E /* LDMenuBackgroundView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		A8646F0020BD108D00B7FCE9 /* LDMenuItemLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDMenuItemLabel.m; sourceTree = "<group>"; };
 		A87692FE20D0C61F00B9F78E /* LDHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDHomeViewController.h; sourceTree = "<group>"; };
 		A87692FF20D0C61F00B9F78E /* LDHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDHomeViewController.m; sourceTree = "<group>"; };
+		A876930120D0D37400B9F78E /* LDMenuBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDMenuBackgroundView.h; sourceTree = "<group>"; };
+		A876930220D0D37400B9F78E /* LDMenuBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDMenuBackgroundView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				A8646EFD20BD107D00B7FCE9 /* LDMenuView.m */,
 				A8646EFF20BD108D00B7FCE9 /* LDMenuItemLabel.h */,
 				A8646F0020BD108D00B7FCE9 /* LDMenuItemLabel.m */,
+				A876930120D0D37400B9F78E /* LDMenuBackgroundView.h */,
+				A876930220D0D37400B9F78E /* LDMenuBackgroundView.m */,
 			);
 			path = LDMenu;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				A8646EB720BB9CEF00B7FCE9 /* ViewController.m in Sources */,
 				A8646EF620BBF0B000B7FCE9 /* UIDevice+Tool.m in Sources */,
 				A8646F0120BD108D00B7FCE9 /* LDMenuItemLabel.m in Sources */,
+				A876930320D0D37400B9F78E /* LDMenuBackgroundView.m in Sources */,
 				A8646EFA20BD096E00B7FCE9 /* TableViewController.m in Sources */,
 				A8646ECB20BB9D6700B7FCE9 /* LDPagesViewController.m in Sources */,
 				A8646EFE20BD107D00B7FCE9 /* LDMenuView.m in Sources */,
