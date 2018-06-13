@@ -72,6 +72,7 @@
     if (shadowRate > 1.0 || shadowRate < 0.0) {
         return;
     }
+    _shadowRate = shadowRate;
     [self setShadow];
 }
 

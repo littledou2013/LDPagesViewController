@@ -8,22 +8,28 @@
 
 #import "TableViewController.h"
 #import "LDHomeViewController.h"
+#import "UIColor+Tool.h"
+
 
 @interface TableViewController () <LDChildViewControllerProtocol>
 {
     NSTimer *_timer;
+    
+    UIColor *_bannerColor;
 }
 @property (nonatomic, strong) NSMutableArray *arr;
 @end
 
 @implementation TableViewController
 @synthesize delegate = _delegate;
-
+// 只与offset有关
 @synthesize menuBackgroundViewAlpha = _menuBackgroundViewAlpha;
-
+// 与banner是否有颜色和offset有关
 @synthesize menuBackgroundViewColor = _menuBackgroundViewColor;
-
+// 只与offset有关
 @synthesize menuBackgroundViewShadowRate = _menuBackgroundViewShadowRate;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor randomColor]];
@@ -36,9 +42,20 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [self->_delegate updateBackgroundViewFromViewController:self];
+
+    _bannerColor = [UIColor randomColor];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:3 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        self->_bannerColor = [UIColor randomColor];
+        self->_menuBackgroundViewColor = [UIColor colorMixWithColor1:self->_bannerColor color2:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] rate:1 - self->_menuBackgroundViewShadowRate];
+        [self.delegate updateBackgroundViewFromViewController:self];
     }];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.tableView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,24 +66,22 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 10;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 10;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -113,18 +128,29 @@
 */
 
 #pragma mark -
-- (CGFloat)menuBackgroundViewShadowRate {
-    return random() % 100 / 100.0;
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (@available(iOS 11.0, *)) {
+        CGFloat deltaOfY = scrollView.contentOffset.y + scrollView.adjustedContentInset.top;
+        if (deltaOfY < 0) {
+            _menuBackgroundViewShadowRate = 1;
+            _menuBackgroundViewAlpha = MAX(0, 1 + deltaOfY / 60);
+        } else {
+            _menuBackgroundViewShadowRate = MAX(0, 1 - deltaOfY / 60);
+            _menuBackgroundViewAlpha = 1.0;
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+    _menuBackgroundViewColor = [UIColor colorMixWithColor1:_bannerColor color2:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] rate:_menuBackgroundViewShadowRate];
+    [self->_delegate updateBackgroundViewFromViewController:self];
 }
 
-- (CGFloat)menuBackgroundViewAlpha {
-   return random() % 100 / 100.0;
-}
-
+#pragma mark -
 - (UIColor *)menuBackgroundViewColor {
-    return [UIColor randomColor];
+    if (_menuBackgroundViewColor == nil) {
+        _menuBackgroundViewColor = [UIColor colorMixWithColor1:_bannerColor color2:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] rate:1 - _menuBackgroundViewShadowRate];
+    }
+    return _menuBackgroundViewColor;
 }
-
-
 
 @end

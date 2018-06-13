@@ -12,7 +12,7 @@
 @protocol LDChildViewControllerProtocol <NSObject>
 @property (nonatomic, assign) CGFloat menuBackgroundViewAlpha;
 @property (nonatomic, assign) CGFloat menuBackgroundViewShadowRate;
-@property (nonatomic, assign) UIColor *menuBackgroundViewColor;
+@property (nonatomic, strong) UIColor *menuBackgroundViewColor;
 @property (nonatomic, weak) id<LDChildViewControllerDelegate> delegate;
 @end
 

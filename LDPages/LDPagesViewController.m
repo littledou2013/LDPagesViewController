@@ -158,8 +158,6 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
     UIViewController *vc = [_displayVC objectForKey:@(index)];
     if (!vc) {
         vc = [_memCache objectForKey:@(index)];
-    } else {
-        vc = [_dataSource pagesViewController:self viewControllerForIndex:index];
     }
     return vc;
 }
