@@ -28,9 +28,9 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor randomColor]];
     self.arr = [NSMutableArray array];
-    for (int i = 0; i < 10000000; ++i) {
-        [self.arr addObject:@"jiayou"];
-    }
+//    for (int i = 0; i < 10000000; ++i) {
+//        [self.arr addObject:@"jiayou"];
+//    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

@@ -21,4 +21,6 @@
 @interface LDMenuView : UIView
 @property (nonatomic, weak) id<LDMenuViewDelegate> delegate;
 @property (nonatomic, weak) id<LDMenuViewDataSource> dataSource;
+
+- (void)slideMenuAtProgress:(CGFloat)progress;
 @end

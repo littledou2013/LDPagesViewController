@@ -66,7 +66,7 @@
     [_pagesViewController setCurrentIndex:randIndex];
 }
 
-#pragma mark
+#pragma mark - 容器视图控制器
 - (NSInteger)numberOfViewControllerInPagseViewController:(LDPagesViewController *)pagesViewController {
     return 100;
 }
@@ -86,6 +86,7 @@
 - (void)pagesViewController:(LDPagesViewController<LDChildViewControllerProtocol> *)pagesViewController didChangedRationX:(CGFloat)rationX {
     _pagesViewRationX = rationX;
     [self updateBackgroundView:rationX];
+    [_menuView slideMenuAtProgress:rationX];
 }
 
 #pragma mark -- 辅助方法
@@ -123,7 +124,7 @@
 }
 
 - (void)menuView:(LDMenuView *)menuView didSelectedIndex:(NSInteger)selectedIndex currentIndex:(NSInteger)currentIndex {
-    
+    [_pagesViewController setCurrentIndex:selectedIndex];
 }
 
 #pragma mark -

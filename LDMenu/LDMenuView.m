@@ -67,6 +67,21 @@ static NSInteger const LDMenuItemTagOffset = 6250;
     [self reloadData];
 }
 
+- (void)slideMenuAtProgress:(CGFloat)progress {
+    NSInteger tag = (NSInteger)progress + LDMenuItemTagOffset;
+    CGFloat rate = progress - tag + LDMenuItemTagOffset;
+    LDMenuItemLabel *currentItem = (LDMenuItemLabel *)[self viewWithTag:tag];
+    LDMenuItemLabel *nextItem = (LDMenuItemLabel *)[self viewWithTag:tag+1];
+    if (rate == 0.0) {
+        [self.selItem setRate:0];
+        self.selItem = currentItem;
+        [self.selItem setRate:1.0];
+        [self refreshContentOffset];
+        return;
+    }
+    currentItem.rate = 1-rate;
+    nextItem.rate = rate;
+}
 
 // 让选中的item位于中间
 - (void)refreshContentOffset {
@@ -160,12 +175,12 @@ static NSInteger const LDMenuItemTagOffset = 6250;
     if ([self.delegate respondsToSelector:@selector(menuView:didSelectedIndex:currentIndex:)]) {
         [self.delegate menuView:self didSelectedIndex:menuItem.tag - LDMenuItemTagOffset currentIndex:currentIndex];
     }
-    
-    [menuItem setRate:1.0];
-    [self.selItem setRate:0];
-    self.selItem = menuItem;
-    
-    [self refreshContentOffset];
+//    
+//    [menuItem setRate:1.0];
+//    [self.selItem setRate:0];
+//    self.selItem = menuItem;
+//    
+//    [self refreshContentOffset];
 }
 
 @end
