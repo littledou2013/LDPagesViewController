@@ -1,23 +1,22 @@
 //
-//  QTHomeViewController.m
+//  LDHomeViewController.m
 //  LDPagesViewController
 //
 //  Created by cxs on 2018/5/28.
 //  Copyright © 2018年 cxs. All rights reserved.
 //
 
-#import "QTHomeViewController.h"
-#import "LDPagesViewController.h"
+#import "LDHomeViewController.h"
 #import "TableViewController.h"
 
-@interface QTHomeViewController ()<LDPagesViewControllerDataSource, LDPagesViewControllerDelegate>
+@interface LDHomeViewController ()<LDPagesViewControllerDataSource, LDPagesViewControllerDelegate>
 {
     LDPagesViewController *_pagesViewController;
     UIButton *_button;
 }
 @end
 
-@implementation QTHomeViewController
+@implementation LDHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self.navigationController setNavigationBarHidden:YES];
+    //    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

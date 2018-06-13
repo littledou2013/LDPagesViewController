@@ -15,11 +15,11 @@
 		A8646EC220BB9CF000B7FCE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EC120BB9CF000B7FCE9 /* main.m */; };
 		A8646ECB20BB9D6700B7FCE9 /* LDPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646ECA20BB9D6700B7FCE9 /* LDPagesViewController.m */; };
 		A8646ED420BBC1B800B7FCE9 /* UIColor+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646ED320BBC1B800B7FCE9 /* UIColor+Tool.m */; };
-		A8646EDA20BBEF3100B7FCE9 /* QTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646ED920BBEF3100B7FCE9 /* QTHomeViewController.m */; };
 		A8646EF620BBF0B000B7FCE9 /* UIDevice+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EF520BBF0B000B7FCE9 /* UIDevice+Tool.m */; };
 		A8646EFA20BD096E00B7FCE9 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EF920BD096E00B7FCE9 /* TableViewController.m */; };
 		A8646EFE20BD107D00B7FCE9 /* LDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EFD20BD107D00B7FCE9 /* LDMenuView.m */; };
 		A8646F0120BD108D00B7FCE9 /* LDMenuItemLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646F0020BD108D00B7FCE9 /* LDMenuItemLabel.m */; };
+		A876930020D0C61F00B9F78E /* LDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87692FF20D0C61F00B9F78E /* LDHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,6 @@
 		A8646ECA20BB9D6700B7FCE9 /* LDPagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDPagesViewController.m; sourceTree = "<group>"; };
 		A8646ED220BBC1B800B7FCE9 /* UIColor+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tool.h"; sourceTree = "<group>"; };
 		A8646ED320BBC1B800B7FCE9 /* UIColor+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tool.m"; sourceTree = "<group>"; };
-		A8646ED820BBEF3100B7FCE9 /* QTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTHomeViewController.h; sourceTree = "<group>"; };
-		A8646ED920BBEF3100B7FCE9 /* QTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTHomeViewController.m; sourceTree = "<group>"; };
 		A8646EF420BBF0B000B7FCE9 /* UIDevice+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Tool.h"; sourceTree = "<group>"; };
 		A8646EF520BBF0B000B7FCE9 /* UIDevice+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Tool.m"; sourceTree = "<group>"; };
 		A8646EF720BBF0F900B7FCE9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -48,6 +46,8 @@
 		A8646EFD20BD107D00B7FCE9 /* LDMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDMenuView.m; sourceTree = "<group>"; };
 		A8646EFF20BD108D00B7FCE9 /* LDMenuItemLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDMenuItemLabel.h; sourceTree = "<group>"; };
 		A8646F0020BD108D00B7FCE9 /* LDMenuItemLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDMenuItemLabel.m; sourceTree = "<group>"; };
+		A87692FE20D0C61F00B9F78E /* LDHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDHomeViewController.h; sourceTree = "<group>"; };
+		A87692FF20D0C61F00B9F78E /* LDHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDHomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 				A8646EB320BB9CEF00B7FCE9 /* AppDelegate.m */,
 				A8646EB520BB9CEF00B7FCE9 /* ViewController.h */,
 				A8646EB620BB9CEF00B7FCE9 /* ViewController.m */,
-				A8646ED820BBEF3100B7FCE9 /* QTHomeViewController.h */,
-				A8646ED920BBEF3100B7FCE9 /* QTHomeViewController.m */,
+				A87692FE20D0C61F00B9F78E /* LDHomeViewController.h */,
+				A87692FF20D0C61F00B9F78E /* LDHomeViewController.m */,
 				A8646EB820BB9CEF00B7FCE9 /* Main.storyboard */,
 				A8646EBB20BB9CF000B7FCE9 /* Assets.xcassets */,
 				A8646EBD20BB9CF000B7FCE9 /* LaunchScreen.storyboard */,
@@ -197,7 +197,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A87692FD20D0BFF500B9F78E /* UserInterfaceState.xcuserstate in Resources */,
 				A8646EBF20BB9CF000B7FCE9 /* LaunchScreen.storyboard in Resources */,
 				A8646EBC20BB9CF000B7FCE9 /* Assets.xcassets in Resources */,
 				A8646EBA20BB9CEF00B7FCE9 /* Main.storyboard in Resources */,
@@ -217,10 +216,10 @@
 				A8646EFA20BD096E00B7FCE9 /* TableViewController.m in Sources */,
 				A8646ECB20BB9D6700B7FCE9 /* LDPagesViewController.m in Sources */,
 				A8646EFE20BD107D00B7FCE9 /* LDMenuView.m in Sources */,
-				A8646EDA20BBEF3100B7FCE9 /* QTHomeViewController.m in Sources */,
 				A8646EC220BB9CF000B7FCE9 /* main.m in Sources */,
 				A8646EB420BB9CEF00B7FCE9 /* AppDelegate.m in Sources */,
 				A8646ED420BBC1B800B7FCE9 /* UIColor+Tool.m in Sources */,
+				A876930020D0C61F00B9F78E /* LDHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

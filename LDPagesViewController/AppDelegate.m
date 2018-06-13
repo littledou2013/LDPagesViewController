@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "QTHomeViewController.h"
+#import "LDHomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    QTHomeViewController *viewController = [[QTHomeViewController alloc] init];
+    LDHomeViewController *viewController = [[LDHomeViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self.window setRootViewController:navigationController];
     [self.window makeKeyAndVisible];
