@@ -45,7 +45,7 @@
         
         _colorGradientLayer.colors = @[(__bridge id)_color.CGColor, (__bridge id)_color.CGColor, (__bridge id)[_color colorWithAlphaComponent:0].CGColor];
         
-        _shadowGradientLayer.colors = @[(__bridge id)[[UIColor blueColor] colorWithAlphaComponent:0.3].CGColor, (__bridge id)[[UIColor blueColor] colorWithAlphaComponent:0].CGColor, (__bridge id)[[UIColor blueColor] colorWithAlphaComponent:0].CGColor];
+        _shadowGradientLayer.colors = @[(__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0.3].CGColor, (__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0].CGColor, (__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0].CGColor];
 
         [self setShadow];
     }
@@ -71,6 +71,11 @@
 - (void)setShadowRate:(CGFloat)shadowRate {
     if (shadowRate > 1.0 || shadowRate < 0.0) {
         return;
+    }
+    CGFloat oldShadowRate = _shadowRate;
+    _shadowRate = shadowRate;
+    if ((shadowRate - 0.5 > 0 && 0.5 - oldShadowRate >= 0) || (shadowRate - 0.5 < 0 && 0.5 - oldShadowRate <= 0)) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"titleColorNeedChange" object:nil];
     }
     _shadowRate = shadowRate;
     [self setShadow];

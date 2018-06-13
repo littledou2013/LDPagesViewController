@@ -53,7 +53,7 @@
         CGFloat leftRed, leftGreen, leftBlue, leftAlpha, rightRed, rightGreen, rightBlue, rightAlpha;
         [leftColor getRed:&leftRed green:&leftGreen blue:&leftBlue alpha:&leftAlpha];
         [rightColor getRed:&rightRed green:&rightGreen blue:&rightBlue alpha:&rightAlpha];
-        UIColor *color = [UIColor colorWithRed:leftRed * rate + (1 - rate) * rightRed green:leftGreen * leftRed * rate + (1 - rate) * rightGreen blue:leftBlue * leftRed * rate + (1 - rate) * rightBlue alpha:leftAlpha * leftRed * rate + (1 - rate) * rightAlpha];
+        UIColor *color = [UIColor colorWithRed:leftRed * rate + (1 - rate) * rightRed green:leftGreen * rate + (1 - rate) * rightGreen blue:leftBlue * rate + (1 - rate) * rightBlue alpha:leftAlpha * rate + (1 - rate) * rightAlpha];
         bannerColor = color;
     } else {
         bannerColor = leftColor ? leftColor : rightColor;

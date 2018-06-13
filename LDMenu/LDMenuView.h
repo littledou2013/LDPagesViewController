@@ -23,4 +23,6 @@
 @property (nonatomic, weak) id<LDMenuViewDataSource> dataSource;
 
 - (void)slideMenuAtProgress:(CGFloat)progress;
+
+- (void)updateTitleColorNormal:(UIColor *)colorNormal titleColorSelected:(UIColor *)colorSelected atIndex:(NSInteger)index;
 @end

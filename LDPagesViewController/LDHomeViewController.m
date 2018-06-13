@@ -49,7 +49,27 @@
     
     _backgroundView = [[LDMenuBackgroundView alloc] initWithFrame:CGRectMake(50, 150, 200, 200)];
     [self.view addSubview:_backgroundView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMenuView) name:@"titleColorNeedChange" object:nil];
 }
+
+
+- (void)updateMenuView {
+    //设置非
+    UIColor *normalColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    if (_backgroundView.shadowRate > 0.5) {
+        normalColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0];
+    }
+    for (int i = 0; i < _pagesViewController.numberOfChildrenViewController; ++i) {
+        UIViewController<LDChildViewControllerProtocol> *viewController = (UIViewController<LDChildViewControllerProtocol> *)[_pagesViewController viewControllerAtIndex:i];
+        UIColor *selectedColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:1.0];
+        if (viewController.menuBackgroundViewShadowRate > 0.5) {
+            selectedColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+        }
+        [_menuView updateTitleColorNormal:normalColor titleColorSelected:selectedColor atIndex:i];
+    }
+}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -68,7 +88,7 @@
 
 #pragma mark - 容器视图控制器
 - (NSInteger)numberOfViewControllerInPagseViewController:(LDPagesViewController *)pagesViewController {
-    return 100;
+    return 10;
 }
 - (UIViewController *)pagesViewController:(LDPagesViewController *)pagesViewController viewControllerForIndex:(NSInteger)index {
     UIViewController<LDChildViewControllerProtocol> *viewController = (UIViewController<LDChildViewControllerProtocol> *)[[TableViewController alloc] init];
@@ -81,9 +101,13 @@
     CGRect frame = vc.view.frame;
     frame.origin.y = 110;
     [vc.view setFrame:frame];
+    [self updateMenuView];
 }
 
 - (void)pagesViewController:(LDPagesViewController<LDChildViewControllerProtocol> *)pagesViewController didChangedRationX:(CGFloat)rationX {
+    if (rationX < 0 || rationX > pagesViewController.numberOfChildrenViewController - 1) {
+        return;
+    }
     _pagesViewRationX = rationX;
     [self updateBackgroundView:rationX];
     [_menuView slideMenuAtProgress:rationX];

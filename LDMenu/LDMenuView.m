@@ -155,6 +155,17 @@ static NSInteger const LDMenuItemTagOffset = 6250;
     }
     _scrollView.contentSize = CGSizeMake(contentWidth, self.frame.size.height);
 }
+
+- (void)updateTitleColorNormal:(UIColor *)colorNormal titleColorSelected:(UIColor *)colorSelected atIndex:(NSInteger)index {
+    LDMenuItemLabel *menuItem = (LDMenuItemLabel *)[self viewWithTag:index + LDMenuItemTagOffset];
+    if (colorNormal) {
+        [menuItem setNormalColor:colorNormal];
+    }
+    if (colorSelected) {
+        [menuItem setSelectedColor:colorSelected];
+    }
+    [menuItem setRate:menuItem.rate];
+}
 #pragma mark - Data Source
 - (NSInteger)titlesCount {
     return [self.dataSource numbersOfTitlesInMenuView:self];
@@ -175,11 +186,11 @@ static NSInteger const LDMenuItemTagOffset = 6250;
     if ([self.delegate respondsToSelector:@selector(menuView:didSelectedIndex:currentIndex:)]) {
         [self.delegate menuView:self didSelectedIndex:menuItem.tag - LDMenuItemTagOffset currentIndex:currentIndex];
     }
-//    
+//
 //    [menuItem setRate:1.0];
 //    [self.selItem setRate:0];
 //    self.selItem = menuItem;
-//    
+//
 //    [self refreshContentOffset];
 }
 

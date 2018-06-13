@@ -146,11 +146,29 @@
 }
 
 #pragma mark -
-- (UIColor *)menuBackgroundViewColor {
-    if (_menuBackgroundViewColor == nil) {
-        _menuBackgroundViewColor = [UIColor colorMixWithColor1:_bannerColor color2:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] rate:1 - _menuBackgroundViewShadowRate];
+- (CGFloat)menuBackgroundViewAlpha {
+    CGFloat deltaOfY = self.tableView.contentOffset.y + self.tableView.contentInset.top;
+    if (deltaOfY < 0) {
+        return MAX(0, 1 + deltaOfY / 60);
+    } else {
+        return 1.0;
     }
-    return _menuBackgroundViewColor;
 }
+
+- (CGFloat)menuBackgroundViewShadowRate {
+    CGFloat deltaOfY = self.tableView.contentOffset.y + self.tableView.contentInset.top;
+    if (_bannerColor == nil) return 0;
+    if (deltaOfY < 0) {
+        return 1;
+    } else {
+        return MAX(0, 1 - deltaOfY / 60);
+    }
+}
+
+- (UIColor *)menuBackgroundViewColor {
+    return [UIColor colorMixWithColor1:_bannerColor ? _bannerColor : [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] color2:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] rate:self.menuBackgroundViewShadowRate];
+}
+
+
 
 @end
