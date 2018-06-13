@@ -8,11 +8,13 @@
 
 #import "LDHomeViewController.h"
 #import "TableViewController.h"
+#import "LDPagesViewController.h"
+#import "LDMenuView.h"
 
-@interface LDHomeViewController ()<LDPagesViewControllerDataSource, LDPagesViewControllerDelegate>
+@interface LDHomeViewController ()<LDPagesViewControllerDataSource, LDPagesViewControllerDelegate, LDMenuViewDelegate, LDMenuViewDataSource>
 {
     LDPagesViewController *_pagesViewController;
-    UIButton *_button;
+    LDMenuView *_menuView;
 }
 @end
 
@@ -30,16 +32,17 @@
     [_pagesViewController.view setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:_pagesViewController.view];
     [self addChildViewController:_pagesViewController];
-    _button = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 100, 50)];
-    [_button setBackgroundColor:[UIColor whiteColor]];
-    [self.view addSubview:_button];
-    [_button addTarget:self action:@selector(changeCurrentIndex) forControlEvents:UIControlEventTouchUpInside];
-    [_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    _menuView = [[LDMenuView alloc] initWithFrame:CGRectMake(10, 40, 200, 50)];
+    [_menuView setDelegate:self];
+    [_menuView setDataSource:self];
+    [_menuView setBackgroundColor:[UIColor purpleColor]];
+    [self.view addSubview:_menuView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -50,7 +53,6 @@
 - (void)changeCurrentIndex {
     NSInteger randIndex = random() % 12;
     [_pagesViewController setCurrentIndex:randIndex];
-    [_button setTitle:[NSString stringWithFormat:@"%@", @(randIndex)] forState:UIControlStateNormal];
 }
 
 #pragma mark
@@ -70,10 +72,21 @@
 }
 
 - (void)pagesViewController:(LDPagesViewController *)pagesViewController didChangeRationX:(CGFloat)rationX {
-    if (pagesViewController.scrollingBecuaseOfDraggingScrollView) {
-        [_button setTitle:[NSString stringWithFormat:@"%@", @(rationX)] forState:UIControlStateNormal];
-    }
     
 }
+
+#pragma mark -
+- (NSInteger)numbersOfTitlesInMenuView:(LDMenuView *)menu {
+    return 10;
+}
+
+- (NSString *)menuView:(LDMenuView *)menu titleAtIndex:(NSInteger)index {
+    return [NSString stringWithFormat:@"标题%@", @(index)];
+}
+
+- (void)menuView:(LDMenuView *)menuView didSelectedIndex:(NSInteger)selectedIndex currentIndex:(NSInteger)currentIndex {
+    
+}
+
 
 @end

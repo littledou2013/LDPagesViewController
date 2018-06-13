@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 @class LDMenuView;
-@protocol QTMenuViewDataSource<NSObject>
+@protocol LDMenuViewDataSource <NSObject>
 @required
 - (NSInteger)numbersOfTitlesInMenuView:(LDMenuView *)menu;
-- (NSInteger)menuView:(LDMenuView *)menu titleAtIndex:(NSInteger)index;
+- (NSString *)menuView:(LDMenuView *)menu titleAtIndex:(NSInteger)index;
 @end
 
-@protocol QTMenuViewDelegate<NSObject>
+@protocol LDMenuViewDelegate<NSObject>
+- (void)menuView:(LDMenuView *)menuView didSelectedIndex:(NSInteger)selectedIndex currentIndex:(NSInteger)currentIndex;
 
 @end
 @interface LDMenuView : UIView
-@property (nonatomic, weak) id<QTMenuViewDelegate> delegate;
-@property (nonatomic, weak) id<QTMenuViewDataSource> dataSource;
+@property (nonatomic, weak) id<LDMenuViewDelegate> delegate;
+@property (nonatomic, weak) id<LDMenuViewDataSource> dataSource;
 @end
