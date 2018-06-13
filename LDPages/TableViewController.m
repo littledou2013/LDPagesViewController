@@ -10,11 +10,20 @@
 #import "LDHomeViewController.h"
 
 @interface TableViewController () <LDChildViewControllerProtocol>
+{
+    NSTimer *_timer;
+}
 @property (nonatomic, strong) NSMutableArray *arr;
 @end
 
 @implementation TableViewController
+@synthesize delegate = _delegate;
 
+@synthesize menuBackgroundViewAlpha = _menuBackgroundViewAlpha;
+
+@synthesize menuBackgroundViewColor = _menuBackgroundViewColor;
+
+@synthesize menuBackgroundViewShadowRate = _menuBackgroundViewShadowRate;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor randomColor]];
@@ -27,6 +36,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [self->_delegate updateBackgroundViewFromViewController:self];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,27 +114,17 @@
 
 #pragma mark -
 - (CGFloat)menuBackgroundViewShadowRate {
-    static int i = 0;
-    ++i;
-    if (i % 2) {
-        return 1.0;
-    } else {
-        return 0.0;
-    }
+    return random() % 100 / 100.0;
 }
 
 - (CGFloat)menuBackgroundViewAlpha {
-    static int i = 0;
-    ++i;
-    if (i % 2) {
-        return 1.0;
-    } else {
-        return 0.0;
-    }
+   return random() % 100 / 100.0;
 }
 
 - (UIColor *)menuBackgroundViewColor {
     return [UIColor randomColor];
 }
+
+
 
 @end

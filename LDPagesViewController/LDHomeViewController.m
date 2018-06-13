@@ -15,12 +15,12 @@
 
 
 
-@interface LDHomeViewController ()<LDPagesViewControllerDataSource, LDPagesViewControllerDelegate, LDMenuViewDelegate, LDMenuViewDataSource>
+@interface LDHomeViewController ()<LDPagesViewControllerDataSource, LDPagesViewControllerDelegate, LDMenuViewDelegate, LDMenuViewDataSource, LDChildViewControllerDelegate>
 {
     LDPagesViewController *_pagesViewController;
     LDMenuView *_menuView;
     LDMenuBackgroundView *_backgroundView;
-    
+    CGFloat _pagesViewRationX;
 }
 @end
 
@@ -38,6 +38,8 @@
     [_pagesViewController.view setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:_pagesViewController.view];
     [self addChildViewController:_pagesViewController];
+    
+    _pagesViewRationX = 0;
     
     _menuView = [[LDMenuView alloc] initWithFrame:CGRectMake(10, 40, 200, 50)];
     [_menuView setDelegate:self];
@@ -69,7 +71,8 @@
     return 100;
 }
 - (UIViewController *)pagesViewController:(LDPagesViewController *)pagesViewController viewControllerForIndex:(NSInteger)index {
-    UIViewController *viewController = [[TableViewController alloc] init];
+    UIViewController<LDChildViewControllerProtocol> *viewController = (UIViewController<LDChildViewControllerProtocol> *)[[TableViewController alloc] init];
+    [viewController setDelegate:self];
     return viewController;
 }
 
@@ -81,32 +84,33 @@
 }
 
 - (void)pagesViewController:(LDPagesViewController<LDChildViewControllerProtocol> *)pagesViewController didChangedRationX:(CGFloat)rationX {
+    _pagesViewRationX = rationX;
+    [self updateBackgroundView:rationX];
+}
+
+#pragma mark -- 辅助方法
+- (void)updateBackgroundView:(CGFloat) rationX {
     //计算menuViewBackground
     NSInteger leftIndex = (int)rationX;
     NSInteger rightIndex = (int)(leftIndex + 1);
-    rightIndex = rightIndex >= [pagesViewController numberOfChildrenViewController] ? [pagesViewController numberOfChildrenViewController] - 1 : rightIndex;
+    rightIndex = rightIndex >= [_pagesViewController numberOfChildrenViewController] ? [_pagesViewController numberOfChildrenViewController] - 1 : rightIndex;
     if (rationX < 0) {
         rationX = 0;
         leftIndex = 0;
         rightIndex = 0;
-    } else if (rationX >= [pagesViewController numberOfChildrenViewController]) {
-        rationX = [pagesViewController numberOfChildrenViewController] - 1;
-        leftIndex = [pagesViewController numberOfChildrenViewController] - 1;
-        rightIndex = [pagesViewController numberOfChildrenViewController] - 1;
+    } else if (rationX >= [_pagesViewController numberOfChildrenViewController]) {
+        rationX = [_pagesViewController numberOfChildrenViewController] - 1;
+        leftIndex = [_pagesViewController numberOfChildrenViewController] - 1;
+        rightIndex = [_pagesViewController numberOfChildrenViewController] - 1;
     }
     if (rationX < 0) return;
     
-    LDPagesViewController<LDChildViewControllerProtocol> *leftViewController = (LDPagesViewController<LDChildViewControllerProtocol> *)[pagesViewController viewControllerAtIndex:leftIndex];
-    LDPagesViewController<LDChildViewControllerProtocol> *rightViewController = (LDPagesViewController<LDChildViewControllerProtocol> *)[pagesViewController viewControllerAtIndex:rightIndex];
-    
-    [_backgroundView setAlpha:(1 - rationX) * leftViewController.menuBackgroundViewAlpha + rationX * rightViewController.menuBackgroundViewAlpha];
-    [_backgroundView setShadowRate:(1 - rationX) * leftViewController.menuBackgroundViewShadowRate + rationX * rightViewController.menuBackgroundViewShadowRate];
-    [_backgroundView setColor:[UIColor colorMixWithColor1:leftViewController.menuBackgroundViewColor color2:rightViewController.menuBackgroundViewColor rate:(1 - rationX)]];
-}
-
-#pragma mark -- 辅助方法
-- (CGFloat)caculateRate:(CGFloat)rate leftValue:(CGFloat)leftValue rightValue:(CGFloat)rightValue {
-    return (1 - rate) * leftValue + rate * rightValue;
+    UIViewController<LDChildViewControllerProtocol> *leftViewController = (UIViewController<LDChildViewControllerProtocol> *)[_pagesViewController viewControllerAtIndex:leftIndex];
+    UIViewController<LDChildViewControllerProtocol> *rightViewController = (LDPagesViewController<LDChildViewControllerProtocol> *)[_pagesViewController viewControllerAtIndex:rightIndex];
+    CGFloat rate = rightIndex - rationX;
+    [_backgroundView setAlpha:rate * leftViewController.menuBackgroundViewAlpha + (1 - rate) * rightViewController.menuBackgroundViewAlpha];
+    [_backgroundView setShadowRate:rate * leftViewController.menuBackgroundViewShadowRate + (1 - rate) * rightViewController.menuBackgroundViewShadowRate];
+    [_backgroundView setColor:[UIColor colorMixWithColor1:leftViewController.menuBackgroundViewColor color2:rightViewController.menuBackgroundViewColor rate:rate]];
 }
 
 #pragma mark -
@@ -122,5 +126,9 @@
     
 }
 
+#pragma mark -
+- (void)updateBackgroundViewFromViewController:(UIViewController<LDChildViewControllerProtocol> *)viewController {
+    [self updateBackgroundView:_pagesViewRationX];
+}
 
 @end
