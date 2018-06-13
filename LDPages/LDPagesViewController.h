@@ -21,7 +21,7 @@
 @protocol LDPagesViewControllerDelegate<NSObject>
 @required
 //侧滑调用
-- (void)pagesViewController:(LDPagesViewController *)pagesViewController didChangeRationX:(CGFloat)rationX;
+- (void)pagesViewController:(LDPagesViewController *)pagesViewController didChangedRationX:(CGFloat)rationX;
 @optional
 
 //某页面开始显示

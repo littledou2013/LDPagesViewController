@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LDChildViewControllerProtocol <NSObject>
+@property (nonatomic, assign) CGFloat menuBackgroundViewAlpha;
+@property (nonatomic, assign) CGFloat menuBackgroundViewShadowRate;
+@property (nonatomic, assign) UIColor *menuBackgroundViewColor;
+@end
 @interface LDHomeViewController : UIViewController
 
 @end

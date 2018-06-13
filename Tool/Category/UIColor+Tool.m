@@ -43,4 +43,21 @@
     sscanf(_c.UTF8String, "%02x%02x%02x", &r, &g, &b);
     return RGBACOLOR(r, g, b, alpha);
 }
+
+//resultColor = color1 * rate + (1 - rate)color2
++(UIColor *)colorMixWithColor1:(UIColor *)color1 color2:(UIColor *)color2 rate:(CGFloat)rate {
+    UIColor *leftColor = color1;
+    UIColor *rightColor = color2;
+    UIColor *bannerColor;
+    if (leftColor && rightColor) {
+        CGFloat leftRed, leftGreen, leftBlue, leftAlpha, rightRed, rightGreen, rightBlue, rightAlpha;
+        [leftColor getRed:&leftRed green:&leftGreen blue:&leftBlue alpha:&leftAlpha];
+        [rightColor getRed:&rightRed green:&rightGreen blue:&rightBlue alpha:&rightAlpha];
+        UIColor *color = [UIColor colorWithRed:leftRed * rate + (1 - rate) * rightRed green:leftGreen * leftRed * rate + (1 - rate) * rightGreen blue:leftBlue * leftRed * rate + (1 - rate) * rightBlue alpha:leftAlpha * leftRed * rate + (1 - rate) * rightAlpha];
+        bannerColor = color;
+    } else {
+        bannerColor = leftColor ? leftColor : rightColor;
+    }
+    return bannerColor;
+}
 @end

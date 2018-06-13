@@ -89,12 +89,12 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
 
 - (void)resetScrollView {
     [_scrollView setFrame:self.view.bounds];
-    _scrollView.contentSize = CGSizeMake(_scrollView.bounds.size.width * self.numberOfViewControllerInPagseViewController, _scrollView.bounds.size.height);
+    _scrollView.contentSize = CGSizeMake(_scrollView.bounds.size.width * self.numberOfChildrenViewController, _scrollView.bounds.size.height);
     [_scrollView setContentOffset:CGPointMake(_currentIndex * _scrollView.bounds.size.width, 0)];
 }
 
 - (void)layoutPagesViewController {
-    for (NSInteger i = 0; i < self.numberOfViewControllerInPagseViewController; ++i) {
+    for (NSInteger i = 0; i < self.numberOfChildrenViewController; ++i) {
         //判断第i个视图是否在界面内
         CGFloat minXOfVc = (i - 1) * _scrollView.bounds.size.width;
         CGFloat maxYOfVc = (i + 1) * _scrollView.bounds.size.width;
@@ -147,7 +147,7 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
 
 
 #pragma mark -- DataSource
-- (NSInteger)numberOfViewControllerInPagseViewController {
+- (NSInteger)numberOfChildrenViewController {
     if (_numberOfViewController == kLDNumberOfViewControllerUndefined) {
         _numberOfViewController = [_dataSource numberOfViewControllerInPagseViewController:self];
     }
@@ -168,7 +168,7 @@ static NSInteger const kLDNumberOfViewControllerUndefined = -1;
 #pragma mark -- UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self layoutPagesViewController];
-    [_delegate pagesViewController:self didChangeRationX:scrollView.bounds.size.width ? scrollView.contentOffset.x / scrollView.bounds.size.width : 0];
+    [_delegate pagesViewController:self didChangedRationX:scrollView.bounds.size.width ? scrollView.contentOffset.x / scrollView.bounds.size.width : 0];
     
 }
 

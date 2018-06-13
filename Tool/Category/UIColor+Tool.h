@@ -11,4 +11,7 @@
 @interface UIColor (Tool)
 +(UIColor *)randomColor;
 +(UIColor *)colorWithString:(NSString *)clrString alpha:(CGFloat)alpha;
+
+/// resultColor = color1 * rate + (1 - rate)color2
++(UIColor *)colorMixWithColor1:(UIColor *)color1 color2:(UIColor *)color2 rate:(CGFloat)rate;
 @end

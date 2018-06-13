@@ -7,8 +7,9 @@
 //
 
 #import "TableViewController.h"
+#import "LDHomeViewController.h"
 
-@interface TableViewController ()
+@interface TableViewController () <LDChildViewControllerProtocol>
 @property (nonatomic, strong) NSMutableArray *arr;
 @end
 
@@ -98,5 +99,30 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -
+- (CGFloat)menuBackgroundViewShadowRate {
+    static int i = 0;
+    ++i;
+    if (i % 2) {
+        return 1.0;
+    } else {
+        return 0.0;
+    }
+}
+
+- (CGFloat)menuBackgroundViewAlpha {
+    static int i = 0;
+    ++i;
+    if (i % 2) {
+        return 1.0;
+    } else {
+        return 0.0;
+    }
+}
+
+- (UIColor *)menuBackgroundViewColor {
+    return [UIColor randomColor];
+}
 
 @end

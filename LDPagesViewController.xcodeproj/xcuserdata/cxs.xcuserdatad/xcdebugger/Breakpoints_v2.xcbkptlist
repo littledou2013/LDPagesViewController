@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LDPages/LDPagesViewController.m"
-            timestampString = "550562757.619517"
+            timestampString = "550565921.291978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LDPagesViewController/LDHomeViewController.m"
-            timestampString = "550563611.231272"
+            filePath = "LDPages/TableViewController.m"
+            timestampString = "550565921.293187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-pagesViewController:willEnterViewControllerAtIndex:"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-menuBackgroundViewColor"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LDPagesViewController/LDHomeViewController.m"
+            timestampString = "550565921.293776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-pagesViewController:didChangedRationX:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
