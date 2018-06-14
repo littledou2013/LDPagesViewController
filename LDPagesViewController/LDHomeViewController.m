@@ -59,7 +59,7 @@
 
 
 - (void)updateMenuView {
-    //设置非
+    //设置更新menuView的颜色
     UIColor *normalColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     if (_backgroundView.shadowRate > 0.5) {
         normalColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0];
