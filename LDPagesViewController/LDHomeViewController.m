@@ -54,6 +54,7 @@
 }
 
 - (void)dealloc {
+    //删除通知
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
