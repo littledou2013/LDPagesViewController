@@ -53,6 +53,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMenuView) name:@"titleColorNeedChange" object:nil];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 - (void)updateMenuView {
     //设置非
