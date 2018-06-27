@@ -14,7 +14,6 @@
 @interface TableViewController () <LDChildViewControllerProtocol>
 {
     NSTimer *_timer;
-    
     UIColor *_bannerColor;
 }
 @property (nonatomic, strong) NSMutableArray *arr;
