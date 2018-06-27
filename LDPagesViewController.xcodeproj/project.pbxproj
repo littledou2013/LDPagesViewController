@@ -372,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PGS44TR36V;
+				DEVELOPMENT_TEAM = 7Y3LDJXL46;
 				GCC_PREFIX_HEADER = LDPagesViewController/PrefixHeader.pch;
 				INFOPLIST_FILE = LDPagesViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -391,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PGS44TR36V;
+				DEVELOPMENT_TEAM = 7Y3LDJXL46;
 				GCC_PREFIX_HEADER = LDPagesViewController/PrefixHeader.pch;
 				INFOPLIST_FILE = LDPagesViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
