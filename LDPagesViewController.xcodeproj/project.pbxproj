@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A84D2BEF20E3BA2C00289215 /* UIImage+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = A84D2BEE20E3BA2C00289215 /* UIImage+Tool.m */; };
 		A8646EB420BB9CEF00B7FCE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EB320BB9CEF00B7FCE9 /* AppDelegate.m */; };
 		A8646EB720BB9CEF00B7FCE9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EB620BB9CEF00B7FCE9 /* ViewController.m */; };
 		A8646EBA20BB9CEF00B7FCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8646EB820BB9CEF00B7FCE9 /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A84D2BED20E3BA2C00289215 /* UIImage+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tool.h"; sourceTree = "<group>"; };
+		A84D2BEE20E3BA2C00289215 /* UIImage+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tool.m"; sourceTree = "<group>"; };
 		A8646EAF20BB9CEF00B7FCE9 /* LDPagesViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDPagesViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8646EB220BB9CEF00B7FCE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A8646EB320BB9CEF00B7FCE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				A8646ED320BBC1B800B7FCE9 /* UIColor+Tool.m */,
 				A8646EF420BBF0B000B7FCE9 /* UIDevice+Tool.h */,
 				A8646EF520BBF0B000B7FCE9 /* UIDevice+Tool.m */,
+				A84D2BED20E3BA2C00289215 /* UIImage+Tool.h */,
+				A84D2BEE20E3BA2C00289215 /* UIImage+Tool.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				A8646EB420BB9CEF00B7FCE9 /* AppDelegate.m in Sources */,
 				A8646ED420BBC1B800B7FCE9 /* UIColor+Tool.m in Sources */,
 				A876930020D0C61F00B9F78E /* LDHomeViewController.m in Sources */,
+				A84D2BEF20E3BA2C00289215 /* UIImage+Tool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
