@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122478D7650F1ACCB7799961 /* libPods-LDPagesViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8EC31DACB3E822AF1D98583 /* libPods-LDPagesViewController.a */; };
 		A84D2BEF20E3BA2C00289215 /* UIImage+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = A84D2BEE20E3BA2C00289215 /* UIImage+Tool.m */; };
 		A8646EB420BB9CEF00B7FCE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EB320BB9CEF00B7FCE9 /* AppDelegate.m */; };
 		A8646EB720BB9CEF00B7FCE9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8646EB620BB9CEF00B7FCE9 /* ViewController.m */; };
@@ -54,6 +55,9 @@
 		A87692FF20D0C61F00B9F78E /* LDHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDHomeViewController.m; sourceTree = "<group>"; };
 		A876930120D0D37400B9F78E /* LDMenuBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDMenuBackgroundView.h; sourceTree = "<group>"; };
 		A876930220D0D37400B9F78E /* LDMenuBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDMenuBackgroundView.m; sourceTree = "<group>"; };
+		B33C17E7BA4FAF7C6AFAE582 /* Pods-LDPagesViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDPagesViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDPagesViewController/Pods-LDPagesViewController.release.xcconfig"; sourceTree = "<group>"; };
+		DB3FAA7F8B4734F6884E8FDB /* Pods-LDPagesViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDPagesViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDPagesViewController/Pods-LDPagesViewController.debug.xcconfig"; sourceTree = "<group>"; };
+		F8EC31DACB3E822AF1D98583 /* libPods-LDPagesViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LDPagesViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +65,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122478D7650F1ACCB7799961 /* libPods-LDPagesViewController.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F987BF14D6307D90F6B7B32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8EC31DACB3E822AF1D98583 /* libPods-LDPagesViewController.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9771F3DC163C9A7B860D82AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB3FAA7F8B4734F6884E8FDB /* Pods-LDPagesViewController.debug.xcconfig */,
+				B33C17E7BA4FAF7C6AFAE582 /* Pods-LDPagesViewController.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A8646EA620BB9CEF00B7FCE9 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +97,8 @@
 				A8646EC820BB9D5100B7FCE9 /* LDPages */,
 				A8646EB120BB9CEF00B7FCE9 /* LDPagesViewController */,
 				A8646EB020BB9CEF00B7FCE9 /* Products */,
+				9771F3DC163C9A7B860D82AE /* Pods */,
+				2F987BF14D6307D90F6B7B32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +181,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8646EC520BB9CF000B7FCE9 /* Build configuration list for PBXNativeTarget "LDPagesViewController" */;
 			buildPhases = (
+				EBAA30F951ADF9F701AF3F45 /* [CP] Check Pods Manifest.lock */,
 				A8646EAB20BB9CEF00B7FCE9 /* Sources */,
 				A8646EAC20BB9CEF00B7FCE9 /* Frameworks */,
 				A8646EAD20BB9CEF00B7FCE9 /* Resources */,
@@ -214,6 +239,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EBAA30F951ADF9F701AF3F45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LDPagesViewController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A8646EAB20BB9CEF00B7FCE9 /* Sources */ = {
@@ -369,6 +415,7 @@
 		};
 		A8646EC620BB9CF000B7FCE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3FAA7F8B4734F6884E8FDB /* Pods-LDPagesViewController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,10 +423,7 @@
 				GCC_PREFIX_HEADER = LDPagesViewController/PrefixHeader.pch;
 				INFOPLIST_FILE = LDPagesViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = littledou.com.LDPagesViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -388,6 +432,7 @@
 		};
 		A8646EC720BB9CF000B7FCE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33C17E7BA4FAF7C6AFAE582 /* Pods-LDPagesViewController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -395,10 +440,7 @@
 				GCC_PREFIX_HEADER = LDPagesViewController/PrefixHeader.pch;
 				INFOPLIST_FILE = LDPagesViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = littledou.com.LDPagesViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
